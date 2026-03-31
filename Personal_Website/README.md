@@ -1,64 +1,79 @@
 # Personal Website
 
-A simple static personal website built from scratch with HTML, CSS, and JavaScript.
+This is a clean starter template for a personal website built with plain HTML, CSS, and JavaScript.
 
-## 1) Run locally
+## 1) Project structure
 
-From this folder:
+```
+Personal_website/
+  index.html
+  styles.css
+  script.js
+  README.md
+```
+
+## 2) Run locally
+
+From the `Personal_website` folder:
 
 ```bash
 python3 -m http.server 5500
 ```
 
-Then open:
+Open: [http://localhost:5500](http://localhost:5500)
 
-`http://localhost:5500`
+## 3) Customize your content
 
-## 2) Customize content
+- Update your name and intro in `index.html`
+- Edit project cards in the Projects section
+- Change colors and spacing in `styles.css`
+- Add your social links in the Contact section
 
-Update:
+## 4) Deploy your site (simple options)
 
-- `index.html` for text, sections, and links
-- `styles.css` for colors and layout
-- `script.js` for small interactions
+### Option A: GitHub Pages
 
-## 3) Host for free (GitHub Pages)
+1. Push this folder to a GitHub repo (for example: `personal-website`)
+2. In GitHub, go to **Settings -> Pages**
+3. Under **Build and deployment**, set:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main` and `/ (root)`
+4. Save and wait for the Pages URL
 
-1. Create a new GitHub repo named `personal-website` (or any name).
-2. Push this folder to that repo:
+If your repo is named `username.github.io`, your site URL can be:
+`https://username.github.io`
 
-```bash
-git init
-git add .
-git commit -m "Initial personal website"
-git branch -M main
-git remote add origin https://github.com/<your-username>/personal-website.git
-git push -u origin main
-```
+Otherwise it is usually:
+`https://username.github.io/repo-name`
 
-3. In GitHub repo settings:
-   - Go to **Pages**
-   - Under **Build and deployment** choose:
-     - Source: **Deploy from a branch**
-     - Branch: **main**
-     - Folder: **/(root)**
+### Option B: Netlify (drag-and-drop easiest)
 
-4. Wait 1-2 minutes and your site will be live at:
-   - `https://<your-username>.github.io/personal-website/`
+1. Go to [https://app.netlify.com/drop](https://app.netlify.com/drop)
+2. Drag your `Personal_website` folder into the page
+3. Netlify gives you a live URL immediately
 
-## 4) Optional custom domain
+### Option C: Vercel
 
-1. Buy domain from a registrar (Namecheap, Porkbun, Google Domains alternatives, etc.).
-2. In GitHub Pages settings, add your domain.
-3. Add DNS records at your registrar:
-   - `A` records to GitHub Pages IPs
-   - `CNAME` record for `www` pointing to `<your-username>.github.io`
+1. Push code to GitHub
+2. Import repo at [https://vercel.com/new](https://vercel.com/new)
+3. Framework preset: **Other**
+4. Deploy
 
-GitHub will automatically handle HTTPS once DNS is set correctly.
+## 5) Use your own custom domain
 
-## 5) Alternative hosting (even easier deploy UX)
+After deployment:
 
-- Netlify: drag-and-drop folder or connect GitHub repo
-- Vercel: import GitHub repo and deploy
+1. Buy a domain (Namecheap, Cloudflare, Google Domains, etc.)
+2. In your hosting provider, add the custom domain (for example, `alexlopez.dev`)
+3. In your domain DNS:
+   - Add a **CNAME** for `www` pointing to the host target
+   - Add **A records** for root domain (`@`) if your host requires them
+4. Wait for DNS propagation (a few minutes to 24 hours)
+5. Enable HTTPS in the hosting dashboard
 
-Both auto-redeploy when you push changes.
+## 6) Next upgrades
+
+- Add a resume PDF download button
+- Add a blog page
+- Add a contact form with Formspree or Netlify Forms
+- Add analytics (Plausible or Google Analytics)
